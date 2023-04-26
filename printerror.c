@@ -30,12 +30,12 @@ void PrintError(enum errorTypes error, char* string) {
     int i;
     switch (error) {
     case overst:
-        printf("***Error***     OVERFLOW\n");
+        printf("***Error***\t\t\t\tOVERFLOW\n");
         ++cErrors;
         exit(0);
         break;
     case illid:
-        printf("***Error***\t\t\t%s illegal IDENT", string);
+        printf("***Error***\t\t\t\t%s illegal IDENT", string);
         ++cErrors;
         break;
     case illlen:
@@ -43,7 +43,7 @@ void PrintError(enum errorTypes error, char* string) {
         ++cErrors;
         break;
     case illchar:
-        printf("***Error***\t\t\t");
+        printf("***Error***\t\t\t\t");
         ++cErrors;
         for (i = 0; i < strlen(string); i++) {
             if (!isLetter(string[i]) && !isDigit(string[i]))

@@ -22,8 +22,6 @@ void ReportError(char* string) {
         PrintError(illlen, string);
     }
     else {
-        //글자수 안 넘는 정상 길이 ident
-        printf("ident\t\t");
         ReadID(string); //ST-index 출력
         printf("\t\t%s", string);    //읽은 토큰 출력
     }

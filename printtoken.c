@@ -60,7 +60,7 @@ void printtoken(enum tokentypes tn) {
 
             case TLSBRACKET: printf("Left Small Bracket\t\t%s", yytext); break;
             case TRSBRACKET: printf("Right Small Bracket\t\t%s", yytext); break;
-            case TCOMMA: printf("Comma\t\t\t\t%s", yytext); break;
+            case TCOMMA: printf("Comma\t\t\t\t\t%s", yytext); break;
             case TLMBRACKET: printf("Left Medium Bracket\t\t%s", yytext); break;
             case TRMBRACKET: printf("Right Medium Bracket\t%s", yytext); break;
             case TLLBRACKET: printf("Left Large Bracket\t\t%s", yytext); break;

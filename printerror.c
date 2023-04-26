@@ -37,7 +37,7 @@ void PrintError(enum errorTypes error, char* string) {
             ++cErrors;
             break;
         case illlen:
-            printf("***Error***\t\t\t%s over 10 words", string);
+            printf("***Error***\t\t\t\t%s over 10 words", string);
             ++cErrors;
             break;
         case illchar:

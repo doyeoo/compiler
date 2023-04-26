@@ -32,7 +32,7 @@ void ReadID(char* string)
             ST[nextSTfree++] = string[i];
         }
     }
-    printf("   %d", nextid);  //symbol table에서 현재 token이 저장된 인덱스 출력
+    printf("ident\t\t\t%d", nextid);  //symbol table에서 현재 token이 저장된 인덱스 출력
 }
 
 /* SymTable 함수 : Hash Table 전체 시스템 구성 */

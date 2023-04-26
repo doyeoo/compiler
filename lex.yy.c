@@ -489,12 +489,16 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "scanner.l"
 #line 2 "scanner.l"
+/*scanner.l - lexical analyzer for MiniC
+* programmer - 김지윤, 김도연, 김원우, 하윤지
+* date - 2023/04/26
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "tn.h"
 #include "glob.h"
-#line 496 "lex.yy.c"
-#line 497 "lex.yy.c"
+#line 500 "lex.yy.c"
+#line 501 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -711,9 +715,9 @@ YY_DECL
 		}
 
 	{
-#line 9 "scanner.l"
+#line 13 "scanner.l"
 
-#line 716 "lex.yy.c"
+#line 720 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -772,231 +776,231 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "scanner.l"
+#line 14 "scanner.l"
 return(TCONST);
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "scanner.l"
+#line 15 "scanner.l"
 return(TELSE);
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "scanner.l"
+#line 16 "scanner.l"
 return(TIF);
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "scanner.l"
+#line 17 "scanner.l"
 return(TINT);
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "scanner.l"
+#line 18 "scanner.l"
 return(TRETURN);
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "scanner.l"
+#line 19 "scanner.l"
 return(TVOID);
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 16 "scanner.l"
+#line 20 "scanner.l"
 return(TWHILE);
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 17 "scanner.l"
+#line 21 "scanner.l"
 return(TPLUS);
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 18 "scanner.l"
+#line 22 "scanner.l"
 return(TMINUS);
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 19 "scanner.l"
+#line 23 "scanner.l"
 return(TSTAR);
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 20 "scanner.l"
+#line 24 "scanner.l"
 return(TSLASH);
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 21 "scanner.l"
+#line 25 "scanner.l"
 return(TMOD);
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 22 "scanner.l"
+#line 26 "scanner.l"
 return(TASSIGN);
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 23 "scanner.l"
+#line 27 "scanner.l"
 return(TADDASSIGN);
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 24 "scanner.l"
+#line 28 "scanner.l"
 return(TSUBASSIGN);
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 25 "scanner.l"
+#line 29 "scanner.l"
 return(TMULASSIGN);
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 26 "scanner.l"
+#line 30 "scanner.l"
 return(TDIVASSIGN);
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 27 "scanner.l"
+#line 31 "scanner.l"
 return(TMODASSIGN);
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 28 "scanner.l"
+#line 32 "scanner.l"
 return(TNOT);
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 29 "scanner.l"
+#line 33 "scanner.l"
 return(TAND);
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 30 "scanner.l"
+#line 34 "scanner.l"
 return(TOR);
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 31 "scanner.l"
+#line 35 "scanner.l"
 return(TEQUAL);
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 32 "scanner.l"
+#line 36 "scanner.l"
 return(TNOTEQU);
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 33 "scanner.l"
+#line 37 "scanner.l"
 return(TLESS);
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 34 "scanner.l"
+#line 38 "scanner.l"
 return(TGREAT);
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 35 "scanner.l"
+#line 39 "scanner.l"
 return(TLESSE);
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 36 "scanner.l"
+#line 40 "scanner.l"
 return(TGREATE);
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 37 "scanner.l"
+#line 41 "scanner.l"
 return(TINC);
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 38 "scanner.l"
+#line 42 "scanner.l"
 return(TDEC);
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 39 "scanner.l"
+#line 43 "scanner.l"
 return(TLSBRACKET);
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 40 "scanner.l"
+#line 44 "scanner.l"
 return(TRSBRACKET);
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 41 "scanner.l"
+#line 45 "scanner.l"
 return(TCOMMA);
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 42 "scanner.l"
+#line 46 "scanner.l"
 return(TLMBRACKET);
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 43 "scanner.l"
+#line 47 "scanner.l"
 return(TRMBRACKET);
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 44 "scanner.l"
+#line 48 "scanner.l"
 return(TLLBRACKET);
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 45 "scanner.l"
+#line 49 "scanner.l"
 return(TRLBRACKET);
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 46 "scanner.l"
+#line 50 "scanner.l"
 return(TSEMICOLON);
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 47 "scanner.l"
+#line 51 "scanner.l"
 return(TCOMMENT);
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 48 "scanner.l"
+#line 52 "scanner.l"
 return(TIDENT);
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 49 "scanner.l"
+#line 53 "scanner.l"
 return(TNUMBER);
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 50 "scanner.l"
+#line 54 "scanner.l"
 return(TSEPARATOR);
 	YY_BREAK
 case 42:
 /* rule 42 can match eol */
 YY_RULE_SETUP
-#line 51 "scanner.l"
+#line 55 "scanner.l"
 return(TLINE);
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 52 "scanner.l"
+#line 56 "scanner.l"
 return(TILLID);
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 53 "scanner.l"
+#line 57 "scanner.l"
 return(TERROR);
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 54 "scanner.l"
+#line 58 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 999 "lex.yy.c"
+#line 1003 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2001,11 +2005,10 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 54 "scanner.l"
+#line 58 "scanner.l"
 
 int yywrap()
 {
     printf("KIM WONWOO, KIM JEEYOUN, KIM DOYEON, HA YUNJI\n");
     return 1;
 }
-

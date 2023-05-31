@@ -8,9 +8,9 @@
 #include "glob.h"
 
 int yyerror(char* s) {
-    if (s != "syntax error" && s != "parse error") {
-        cErrors++;
-        printf("%d\t\t%s\n", cLine, s);
+    cErrors++;
+    if (s != "syntax error") {
+        printf("%s\n", s);
     }
 }
 

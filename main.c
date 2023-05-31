@@ -66,7 +66,7 @@ void main()
 
     enum errorTypes error;
 
-    printf("***MiniC parsing begins\n\n");
+    printf("***MiniC parsing begins\n");
     yyparse();
     printf("\nParsing ends.***\n");
 

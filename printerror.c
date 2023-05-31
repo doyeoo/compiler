@@ -1,6 +1,6 @@
 /* printerror.c - Check identifier error
 * programmer - 김지윤, 김도연, 김원우, 하윤지
-* date - 2023/04/26
+* date - 2023/05/31
 */
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,6 +1,6 @@
 /* symtable.c - 각 identifier의 Hash Table 구성
 * programmer - 김지윤, 김도연, 김원우, 하윤지
-* date - 2023/04/26
+* date - 2023/05/31
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,6 +18,7 @@ char separators[] = " \t\r\n";
 int hashcode;
 int found;
 
+/*ComputeHS 함수 : nid와 nfree를 사용하여 해시 코드 계산*/
 void ComputeHS(int nid, int nfree)
 {
     int code, i;
@@ -30,6 +31,7 @@ void ComputeHS(int nid, int nfree)
 
 }
 
+/*LookupHS 함수 : 해시 테이블에서 항목 찾는 함수*/
 void LookupHS(int nid, int hscode)
 {
     HTpointer here;
@@ -56,6 +58,7 @@ void LookupHS(int nid, int hscode)
     }
 }
 
+/*ADDT함수 : 해시 테이블에 새 항목 추가*/
 void ADDHT(int hscode)
 {
     HTpointer ptr;
@@ -82,7 +85,6 @@ void ReadID(char* string)
             ST[nextSTfree++] = string[i];
         }
     }
-    //printf("ident\t\t%s\t%d\n", string, nextid);  //symbol table에서 현재 token이 저장된 인덱스 출력
 }
 
 /* SymTable 함수 : Hash Table 전체 시스템 구성 */
@@ -92,15 +94,9 @@ void SymTable(char* string) {
     LookupHS(nextid, hashcode);
     strcpy(identifier, string);
     if (!found) {
-        //printf("(entered) %s %d\n", string, hashcode);
         ADDHT(hashcode);
-        //printf("%d ", cLine);
-
-        //printf("name_len = %d\n", strlen(HT[hashcode]->name));
-        //printf("name = %s, line = %d\n", HT[hashcode]->name, HT[hashcode]->line);
     }
     else {
-        //printf("(already existed) %s\n", string);
         nextSTfree = nextid;
     }
 

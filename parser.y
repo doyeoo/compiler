@@ -185,7 +185,7 @@ declarator          	: TIDENT //변수 이름
 					//매개변수일 때
 					else if(param==1){
 						if(type_int==1){
-						      look_id->type=10;
+						      look_id->type=7;
 						}
 					}
 					updateAttribute(look_id->type);

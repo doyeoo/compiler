@@ -82,7 +82,8 @@
      TCOMMENT = 298,
      TSEPERATOR = 299,
      TLINE = 300,
-     TILLID = 301
+     TILLID = 301,
+     TERROR = 302
    };
 #endif
 /* Tokens.  */
@@ -130,6 +131,7 @@
 #define TSEPERATOR 299
 #define TLINE 300
 #define TILLID 301
+#define TERROR 302
 
 
 

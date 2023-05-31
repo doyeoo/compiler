@@ -19,13 +19,9 @@ void printType(int type) {
         case 3: printf(", integer array variable"); break;
         case 4: printf(", function, return type void"); break;
         case 5: printf(", not defined"); break;
-        case 6: printf(", float scalar variable"); break;
-        case 7: printf(", float array variable"); break;
-        case 8: printf(", function, return type int"); break;
-        case 9: printf(", function, return type float"); break;
-        case 10: printf(", integer scalar parameter"); break;
-        case 11: printf(", float scalar parameter"); break;
-        case 12: printf(", integer array parameter"); break;
+        case 6: printf(", function, return type int"); break;
+        case 7: printf(", integer scalar parameter"); break;
+        case 8: printf(", integer array parameter"); break;
         default: printf(", identifier parse error"); break;
     }
 }

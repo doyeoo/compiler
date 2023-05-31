@@ -25,6 +25,7 @@ ERROR error = noerror;
 
 void PrintError(enum errorTypes error, char* string) {
     int i;
+    printf("%d\t\t", cLine);
     switch (error) {
         case overst:
             printf("***Error***\t\tOVERFLOW\n");

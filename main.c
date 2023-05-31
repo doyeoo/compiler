@@ -66,12 +66,13 @@ void main()
 
     enum errorTypes error;
 
-    printf("***MiniC parsing begins\n");
+    printf("***MiniC parsing begins\n\n");
     yyparse();
-    printf("Parsing ends.***\n");
+    printf("\nParsing ends.***\n");
 
     PrintHStable();
 
     printf("\n%d error(s) detected\n", cErrors);
 
+    printf("\nKIM WONWOO(2076073), KIM JEEYOUN(2076096), KIM DOYEON(2076033), HA YUNJI(2071051)\n");
 }

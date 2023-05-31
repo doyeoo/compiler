@@ -1,15 +1,17 @@
 /* reporterror.c - identifier error 확인
 * programmer - 김지윤, 김도연, 김원우, 하윤지
-* date - 2023/04/26
+* date - 2023/05/31
 */
 #include <stdio.h>
 #include <string.h>
 #include "tn.h"
 #include "glob.h"
 
-int yyerror(char *s) {
-    cErrors++;
-    printf("%s\n", s);
+int yyerror(char* s) {
+    if (s != "syntax error" && s != "parse error") {
+        cErrors++;
+        printf("%d\t\t%s\n", cLine, s);
+    }
 }
 
 extern void PrintError(enum errorTypes error, char* string);

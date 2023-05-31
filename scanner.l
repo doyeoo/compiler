@@ -1,8 +1,12 @@
 %{
 /*scanner.l - lexical analyzer for MiniC
 * programmer - 김지윤, 김도연, 김원우, 하윤지
-* date - 2023/04/26
+* date - 2023/05/31
 /*lex source for Mini C*/
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 #include "tn.h"
 #include "glob.h"
 
@@ -12,6 +16,7 @@ extern void SymTable(char* string);
 letter  [a-zA-Z_]
 digit   [0-9]
 %%
+
 "const"      return(TCONST);
 "else"      return(TELSE);
 "if"      return(TIF);
@@ -53,6 +58,7 @@ digit   [0-9]
 "\n"     {
             cLine++;
          }
+
 {letter}({letter}|{digit})* {
                                 if (yyleng <= 10) {
                                     SymTable(yytext);

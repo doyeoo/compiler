@@ -6,7 +6,7 @@
 * nextSTfree - string table에서 새로 들어온 string이 위치할 index
 * line - 해당 토큰의 줄 번호
 * cErrors - testdata의 에러 개수
-* date - 2023/04/26
+* date - 2023/05/31
 */
 #pragma once
 

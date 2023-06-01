@@ -41,6 +41,11 @@ translation_unit       	: external_dcl
 external_dcl         	: function_def
                  	| declaration
 			| TIDENT TSEMICOLON
+			| TRMBRACKET
+			{
+				yyerrok;
+				yyerror("no left medium bracket");
+			}
                		;
 function_def          	: function_header compound_st
 			| function_header TSEMICOLON
@@ -321,32 +326,32 @@ assignment_exp       	: logical_or_exp //a||b
 			| unary_exp TASSIGN error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| unary_exp TADDASSIGN error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| unary_exp TSUBASSIGN error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| unary_exp TMULASSIGN error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| unary_exp TDIVASSIGN error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| unary_exp TMODASSIGN error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			;
 logical_or_exp       	: logical_and_exp
@@ -411,12 +416,12 @@ additive_exp          	: multiplicative_exp
 			| additive_exp TPLUS error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| additive_exp TMINUS error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			;
 multiplicative_exp      : unary_exp
@@ -426,17 +431,17 @@ multiplicative_exp      : unary_exp
 			| multiplicative_exp TSTAR error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| multiplicative_exp TSLASH error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			| multiplicative_exp TMOD error
 			{
 				yyerrok;
-				yyerror("no expression");
+				yyerror("no number");
 			}
 			;
 //단항식(항 하나)

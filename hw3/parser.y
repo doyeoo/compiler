@@ -12,7 +12,6 @@
 
 int type_int=0;
 int type_void=0;
-int type_float=0;
 int param=0;
 
 void updateAttribute();
@@ -26,7 +25,7 @@ extern int yyerror(char *s);
 %nonassoc TELSE
 
 %token TIDENT
-%token TNUMBER TCONST TELSE TIF TINT TFLOAT TRETURN TVOID TWHILE
+%token TNUMBER TCONST TELSE TIF TINT TRETURN TVOID TWHILE
 %token TADDASSIGN TSUBASSIGN TMULASSIGN TDIVASSIGN TMODASSIGN
 %token TOR TAND TEQUAL TNOTEQU TGREATE TLESSE TINC TDEC
 %token TPLUS TMINUS TSTAR TSLASH TMOD TASSIGN TNOT TLESS TGREAT
@@ -73,19 +72,11 @@ type_specifier          : TINT
 			{
 				type_int=1;
 				type_void=0;
-				type_float=0;
 			}
 			| TVOID
 			{
 				type_int=0;
 				type_void=1;
-				type_float=0;
-			}
-			| TFLOAT
-			{
-				type_int=0;
-				type_void=0;
-				type_float=1;
 			}
 			;
 //함수 이름은 식별자
@@ -96,8 +87,6 @@ function_name     	: TIDENT
 					      	look_id->type=4;
 					} else if(type_int==1){
 					      	look_id->type=6;
-					} else if(type_float==1){
-					      	look_id->type=13;
 					}
 					updateAttribute(look_id->type);
 					param=1;
@@ -158,7 +147,6 @@ declaration          	: dcl_spec init_dcl_list TSEMICOLON
 			{
 				type_int=0;
 				type_void=0;
-				type_float=0;
 			}
 			| dcl_spec init_dcl_list error
 			{
@@ -166,7 +154,6 @@ declaration          	: dcl_spec init_dcl_list TSEMICOLON
 				yyerrok;
 				type_int=0;
 				type_void=0;
-				type_float=0;
 				cLine--;
 				yyerror("no semicolon");
 				cLine++;
@@ -202,17 +189,11 @@ declarator          	: TIDENT //변수 이름
 						else if(type_void==1){
 						      look_id->type=2;
 					        }
-					        else if(type_float==1){
-						      look_id->type=9;
-					        }
 					}
 					//매개변수일 때
 					else if(param==1){
 						if(type_int==1){
 						      look_id->type=7;
-						}
-						else if(type_float==1){
-						      look_id->type=11;
 						}
 					}
 					updateAttribute(look_id->type);
@@ -227,13 +208,6 @@ declarator          	: TIDENT //변수 이름
 							look_id->type=8; //배열 매개변수
 						} else {
 							look_id->type=3;
-						}
-					}
-					else if(type_float==1) {
-						if(param==1) {
-							look_id->type=12; //배열 매개변수
-						} else {
-							look_id->type=10;
 						}
 					}
 					updateAttribute(look_id->type);

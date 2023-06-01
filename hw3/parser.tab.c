@@ -166,7 +166,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 6 "parser.y"
+#line 6 "hw3/parser.y"
 
 #include <stdio.h>
 #include <ctype.h>
@@ -566,17 +566,17 @@ static const yytype_uint16 yyrline[] =
       51,    52,    59,    62,    64,    65,    68,    69,    71,    72,
       78,    84,    92,   107,   113,   117,   124,   126,   131,   132,
      133,   139,   142,   143,   150,   151,   154,   155,   157,   163,
-     174,   175,   176,   183,   184,   185,   192,   220,   241,   248,
-     249,   252,   253,   256,   257,   260,   261,   262,   263,   264,
-     267,   270,   271,   274,   275,   276,   281,   286,   293,   294,
-     299,   304,   310,   311,   317,   319,   320,   321,   322,   323,
-     324,   325,   326,   331,   336,   341,   346,   351,   357,   358,
-     359,   365,   366,   367,   373,   374,   375,   376,   381,   387,
-     388,   389,   390,   391,   392,   397,   402,   407,   413,   414,
-     415,   416,   421,   427,   428,   429,   430,   431,   436,   441,
-     448,   449,   450,   451,   452,   455,   456,   457,   462,   463,
-     468,   469,   471,   472,   474,   476,   477,   479,   485,   486,
-     487
+     176,   177,   178,   185,   186,   187,   194,   222,   243,   250,
+     251,   254,   255,   258,   259,   262,   263,   264,   265,   266,
+     269,   272,   273,   276,   277,   278,   283,   288,   295,   296,
+     301,   306,   312,   313,   321,   323,   324,   325,   326,   327,
+     328,   329,   330,   335,   340,   345,   350,   355,   361,   362,
+     363,   369,   370,   371,   377,   378,   379,   380,   385,   391,
+     392,   393,   394,   395,   396,   401,   406,   411,   417,   418,
+     419,   420,   425,   431,   432,   433,   434,   435,   440,   445,
+     452,   453,   454,   455,   456,   459,   460,   461,   466,   467,
+     472,   473,   475,   476,   478,   480,   481,   483,   489,   490,
+     491
 };
 #endif
 
@@ -1676,7 +1676,7 @@ yyreduce:
   switch (yyn)
     {
         case 8:
-#line 45 "parser.y"
+#line 45 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no left medium bracket");
@@ -1684,7 +1684,7 @@ yyreduce:
     break;
 
   case 11:
-#line 53 "parser.y"
+#line 53 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("wrong function");
@@ -1692,7 +1692,7 @@ yyreduce:
     break;
 
   case 19:
-#line 73 "parser.y"
+#line 73 "hw3/parser.y"
     {
 				type_int=1;
 				type_void=0;
@@ -1701,7 +1701,7 @@ yyreduce:
     break;
 
   case 20:
-#line 79 "parser.y"
+#line 79 "hw3/parser.y"
     {
 				type_int=0;
 				type_void=1;
@@ -1710,7 +1710,7 @@ yyreduce:
     break;
 
   case 21:
-#line 85 "parser.y"
+#line 85 "hw3/parser.y"
     {
 				type_int=0;
 				type_void=0;
@@ -1719,7 +1719,7 @@ yyreduce:
     break;
 
   case 22:
-#line 93 "parser.y"
+#line 93 "hw3/parser.y"
     {
 				if(look_id->type==0||look_id->type==5){
 					if(type_void==1){
@@ -1736,7 +1736,7 @@ yyreduce:
     break;
 
   case 23:
-#line 107 "parser.y"
+#line 107 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no function name");
@@ -1744,14 +1744,14 @@ yyreduce:
     break;
 
   case 24:
-#line 114 "parser.y"
+#line 114 "hw3/parser.y"
     {
 				param=0;
 			;}
     break;
 
   case 25:
-#line 118 "parser.y"
+#line 118 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right small bracket");
@@ -1759,14 +1759,14 @@ yyreduce:
     break;
 
   case 27:
-#line 126 "parser.y"
+#line 126 "hw3/parser.y"
     {
 				param=0;
 			;}
     break;
 
   case 30:
-#line 133 "parser.y"
+#line 133 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no comma");
@@ -1774,7 +1774,7 @@ yyreduce:
     break;
 
   case 33:
-#line 144 "parser.y"
+#line 144 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right medium bracket");
@@ -1782,7 +1782,7 @@ yyreduce:
     break;
 
   case 38:
-#line 158 "parser.y"
+#line 158 "hw3/parser.y"
     {
 				type_int=0;
 				type_void=0;
@@ -1791,19 +1791,21 @@ yyreduce:
     break;
 
   case 39:
-#line 164 "parser.y"
+#line 164 "hw3/parser.y"
     {
 				look_tmp->type=0; /* identifier about parse error*/
 				yyerrok;
 				type_int=0;
 				type_void=0;
 				type_float=0;
+				cLine--;
 				yyerror("no semicolon");
+				cLine++;
 			;}
     break;
 
   case 42:
-#line 177 "parser.y"
+#line 179 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no comma");
@@ -1811,7 +1813,7 @@ yyreduce:
     break;
 
   case 45:
-#line 186 "parser.y"
+#line 188 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1819,7 +1821,7 @@ yyreduce:
     break;
 
   case 46:
-#line 193 "parser.y"
+#line 195 "hw3/parser.y"
     {
 				if(look_id->type==0){
 					//매개변수 아닐 때
@@ -1850,7 +1852,7 @@ yyreduce:
     break;
 
   case 47:
-#line 221 "parser.y"
+#line 223 "hw3/parser.y"
     {
 				if(look_id->type==0){
 					if(type_int==1) {
@@ -1874,7 +1876,7 @@ yyreduce:
     break;
 
   case 48:
-#line 242 "parser.y"
+#line 244 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right large bracket");
@@ -1882,7 +1884,7 @@ yyreduce:
     break;
 
   case 65:
-#line 277 "parser.y"
+#line 279 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right small bracket");
@@ -1890,7 +1892,7 @@ yyreduce:
     break;
 
   case 66:
-#line 282 "parser.y"
+#line 284 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -1898,7 +1900,7 @@ yyreduce:
     break;
 
   case 67:
-#line 287 "parser.y"
+#line 289 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no small left bracket");
@@ -1906,7 +1908,7 @@ yyreduce:
     break;
 
   case 69:
-#line 295 "parser.y"
+#line 297 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right small bracket");
@@ -1914,7 +1916,7 @@ yyreduce:
     break;
 
   case 70:
-#line 300 "parser.y"
+#line 302 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no left small bracket");
@@ -1922,7 +1924,7 @@ yyreduce:
     break;
 
   case 71:
-#line 305 "parser.y"
+#line 307 "hw3/parser.y"
     {
 				    yyerrok;
 				    yyerror("no expression");
@@ -1930,15 +1932,17 @@ yyreduce:
     break;
 
   case 73:
-#line 312 "parser.y"
+#line 314 "hw3/parser.y"
     {
 				yyerrok;
+				cLine--;
 				yyerror("no semicolon");
+				cLine++;
 			;}
     break;
 
   case 82:
-#line 327 "parser.y"
+#line 331 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1946,7 +1950,7 @@ yyreduce:
     break;
 
   case 83:
-#line 332 "parser.y"
+#line 336 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1954,7 +1958,7 @@ yyreduce:
     break;
 
   case 84:
-#line 337 "parser.y"
+#line 341 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1962,7 +1966,7 @@ yyreduce:
     break;
 
   case 85:
-#line 342 "parser.y"
+#line 346 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1970,7 +1974,7 @@ yyreduce:
     break;
 
   case 86:
-#line 347 "parser.y"
+#line 351 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1978,7 +1982,7 @@ yyreduce:
     break;
 
   case 87:
-#line 352 "parser.y"
+#line 356 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -1986,7 +1990,7 @@ yyreduce:
     break;
 
   case 90:
-#line 360 "parser.y"
+#line 364 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -1994,7 +1998,7 @@ yyreduce:
     break;
 
   case 93:
-#line 368 "parser.y"
+#line 372 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2002,7 +2006,7 @@ yyreduce:
     break;
 
   case 97:
-#line 377 "parser.y"
+#line 381 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2010,7 +2014,7 @@ yyreduce:
     break;
 
   case 98:
-#line 382 "parser.y"
+#line 386 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2018,7 +2022,7 @@ yyreduce:
     break;
 
   case 104:
-#line 393 "parser.y"
+#line 397 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2026,7 +2030,7 @@ yyreduce:
     break;
 
   case 105:
-#line 398 "parser.y"
+#line 402 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2034,7 +2038,7 @@ yyreduce:
     break;
 
   case 106:
-#line 403 "parser.y"
+#line 407 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2042,7 +2046,7 @@ yyreduce:
     break;
 
   case 107:
-#line 408 "parser.y"
+#line 412 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no expression");
@@ -2050,7 +2054,7 @@ yyreduce:
     break;
 
   case 111:
-#line 417 "parser.y"
+#line 421 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -2058,7 +2062,7 @@ yyreduce:
     break;
 
   case 112:
-#line 422 "parser.y"
+#line 426 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -2066,7 +2070,7 @@ yyreduce:
     break;
 
   case 117:
-#line 432 "parser.y"
+#line 436 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -2074,7 +2078,7 @@ yyreduce:
     break;
 
   case 118:
-#line 437 "parser.y"
+#line 441 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -2082,7 +2086,7 @@ yyreduce:
     break;
 
   case 119:
-#line 442 "parser.y"
+#line 446 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no number");
@@ -2090,7 +2094,7 @@ yyreduce:
     break;
 
   case 127:
-#line 458 "parser.y"
+#line 462 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right large bracket");
@@ -2098,7 +2102,7 @@ yyreduce:
     break;
 
   case 129:
-#line 464 "parser.y"
+#line 468 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right small bracket");
@@ -2106,7 +2110,7 @@ yyreduce:
     break;
 
   case 137:
-#line 480 "parser.y"
+#line 484 "hw3/parser.y"
     {
 				if(look_id->type==0)
 					look_id->type=5;
@@ -2115,7 +2119,7 @@ yyreduce:
     break;
 
   case 140:
-#line 488 "parser.y"
+#line 492 "hw3/parser.y"
     {
 				yyerrok;
 				yyerror("no right small bracket");
@@ -2124,7 +2128,7 @@ yyreduce:
 
 
 /* Line 1267 of yacc.c.  */
-#line 2128 "parser.tab.c"
+#line 2132 "parser.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2338,7 +2342,7 @@ yyreturn:
 }
 
 
-#line 493 "parser.y"
+#line 497 "hw3/parser.y"
 
 /*updateAttr 함수 : 주어진 type을 사용하여 속성 업데이트*/
 void updateAttribute(int type)

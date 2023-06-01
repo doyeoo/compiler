@@ -167,7 +167,9 @@ declaration          	: dcl_spec init_dcl_list TSEMICOLON
 				type_int=0;
 				type_void=0;
 				type_float=0;
+				cLine--;
 				yyerror("no semicolon");
+				cLine++;
 			}
 			;
 //쉼표로 구분되어 선언된 변수 목록
@@ -311,7 +313,9 @@ return_st          	: TRETURN opt_expression TSEMICOLON
 			| TRETURN opt_expression error
 			{
 				yyerrok;
+				cLine--;
 				yyerror("no semicolon");
+				cLine++;
 			}
 //표현식
 expression          	: assignment_exp     ;

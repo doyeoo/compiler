@@ -22,6 +22,11 @@ void printType(int type) {
         case 6: printf(", function, return type int"); break;
         case 7: printf(", integer scalar parameter"); break;
         case 8: printf(", integer array parameter"); break;
+        case 9: printf(", float scalar variable"); break;
+        case 10: printf(", float array variable"); break;
+        case 11: printf(", float scalar parameter"); break;
+        case 12: printf(", float array parameter"); break;
+        case 13: printf(", function, return type float"); break;
         default: printf(", identifier parse error"); break;
     }
 }

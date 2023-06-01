@@ -1,6 +1,8 @@
-bison/
-flex.exe
-cmake-build-debug/
 CMakeLists.txt
+cmake-build-debug
 .idea/
+*.dat
 .DS_Store
+main
+flex.exe
+bison/

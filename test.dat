@@ -1,8 +1,0 @@
-int main() {
-    const int str = abc;
-    int length = stringLength(str)
-
-    printf("%d\n", length);
-
-    return 0;
-}
